@@ -21,7 +21,7 @@ function search(query){
 	    dataType: 'jsonp',
 	    crossDomain: true,
 	    jsonp: 'json_callback',
-	    url: 'http://www.giantbomb.com/api/search/?format=jsonp&api_key=' + apikey +'&query=' + encodeURI(query),
+	    url: 'http://www.giantbomb.com/api/search/?format=jsonp&resources=game&api_key=' + apikey +'&query=' + encodeURI(query),
 	    complete: function() {
 	        console.log('ajax complete');
 	    },
