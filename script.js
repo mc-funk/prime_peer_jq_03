@@ -21,9 +21,11 @@ function searchCallback(results) {
         $("#result" + i).children(".preview").append(
             "<p>"+ results[i].deck + "</p>");
         //div 2: desciption, site_detail_url, platforms
-        console.log("description:" + results[i].description);
+        $("#result" + i).children(".extend").append(
+            "<p>" + results[i].description + "</p>");
+        $("#result" + i).children(".extend").append(
+            "<p>Platforms available:</p>");
         for (j = 0; j < results[i].platforms.length; j++) {
-            //results[i][platforms][j][name]
             console.log("platform " + j + ": " + results[i].platforms[j].name);
         }
     }
