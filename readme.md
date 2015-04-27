@@ -21,3 +21,7 @@ Rather than manually creating a database with video game data, this project uses
 ##HARD MODE
 
 In addition to the ability to search, the user should be able to sort and/or filter results based on platform, release date and name.
+
+##PRO MODE
+
+Add JavaScript pagination to the search results using previous and next button clicks. (hint: try wrapping each "page" of results in a div that starts off hidden.)
