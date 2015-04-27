@@ -5,7 +5,8 @@ var apikey = '8e59aef0a8bcad6ac1ccbb6c83bd9533ff6d71d5'; // Put your API key her
 var i;
 var j;
 function searchCallback(results) {
-    console.log(results); //results is an array of objects with 1 object per search result.
+    $('.resultsBlock').empty();
+    //console.log(results); //results is an array of objects with 1 object per search result.
     for (i = 0; i < results.length; i++) {
         //create a div with two divs nested in it
         $(".resultsBlock").append("<div id='result" + i + "' class='col-md-3 searchResult'><div class='preview'></div><div style='display:none' class='extend'></div></div>");
