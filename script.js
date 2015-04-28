@@ -4,12 +4,17 @@ var apikey = '8e59aef0a8bcad6ac1ccbb6c83bd9533ff6d71d5'; // Put your API key her
 // It is called after 'search' is executed.
 var i;
 var j;
+var rowCount = 0;
 function searchCallback(results) {
     $('.resultsBlock').empty();
     //console.log(results); //results is an array of objects with 1 object per search result.
     for (i = 0; i < results.length; i++) {
         //create a div with two divs nested in it
-        $(".resultsBlock").append("<div id='result" + i + "' class='col-md-3 searchResult'><div class='preview'></div><div style='display:none' class='extend'></div></div>");
+        if (i % 4 == 0) { //check to see if game should be start of a new row, based on i
+            rowCount++;
+            $(".resultsBlock").append("<div class='row' id='row" + rowCount + "'></div>");
+        }
+        $("#row" + rowCount).append("<div id='result" + i + "' class='col-md-3 searchResult'><div class='preview'></div><div style='display:none' class='extend'></div></div>");
         //div 1: image, name, original_release_date, deck
         $("#result" + i).children(".preview").append(
             "<p><img src='" + results[i].image.thumb_url + "' ></p>"
